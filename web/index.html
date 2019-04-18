@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script>
+            var request;
+            function validate()
+                    {
+                    var sn = document.getElementById("username").value;
+                    var ps = document.getElementById("password").value;
+                    var url = "newjsp.jsp?val=" + sn + "&v="+ps;
+                    
+                    if(window.XMLHttpRequest){
+                    request = new XMLHttpRequest();
+                    }
+                  else if (window.ActiveXObject){
+                    request = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+
+                    try{
+                    request.onreadystatechange = getInfo;
+                    request.open("GET", url, true);
+                    request.send();
+                    } catch (e){
+                        alert("Unable to connect to server"); }
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+        <input type="text" name="username" id="username"/><br>
+        <label>Password :</label>
+        <input type="password" name="password" id="password"/><br>
+        <button type="button" onclick="validate()"/>LOGIN</button>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+</body>
+</html>
+
